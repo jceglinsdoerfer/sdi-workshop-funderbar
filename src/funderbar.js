@@ -3,29 +3,30 @@
 
   window._ = {};
 
-  var FILL_ME_IN = 'Fill this value in';
+  var input = 'Fill this value in';
 
 //_.define is wanting you to declare a variable, set your variable to the input from the function
 // and then return the variable you just created. This function is nearly completed for you, 
 // to help guide you toward success in your work on the following exercises.
   _.define = function(input){
     // Declare a variable below that is assigned the value of input;
-    var result = FILL_ME_IN;
+    var result = input;
     // return the above variable
-    return FILL_ME_IN;
+    return result;
   }
 
 //_.dataType is wanting you to determine the data type of what is being passed into it.
 // Return the datatype of input: ie. string or number or boolean etc. 
 _.dataType = function(input){
   //Code Goes Below
-
+var result = typeof input;
+return result;
 }
 
 //_.sum takes two numbers as parameters and returns their sum
 _.sum = function(a,b){
     //Code Goes Below
-    
+   return a + b; 
 }
 
 //_.subtract takes two numbers as parameters and returns their difference
@@ -33,40 +34,42 @@ _.subtract = function(a,b){
   //Code Goes Below
   //For your code remember to subtract b from a
   //a - b
-  
+  return a - b;
 }
 
 //_.multiply takes two numbers as parameters and returns their product
 _.multiply = function(a,b){
   //Code Goes Below
-  
+  return a * b;
 }
 
 //_.divide takes two numbers as parameters and returns their quotient
 _.divide = function(a,b){
   //Code Goes Below
   //a divided by b
-  
+  return a / b;
+
 }
 
 //_.remainderOperator takes two numbers as parameters and returns their remainder of a divided by b
 _.remainderOperator = function(a,b){
   //Code Goes Below
   //return the remainder of a divided by b
+  return a % b;
 }
 
 //_.increment takes a number as a parameter and increces it by 1
 // Ensure you use the proper increment operator(not a+1)
 _.increment = function(a){
   //Code Goes Below
-  
+  return ++a;
 }
 
 //_.decrement takes a number as a parameter and reduces it by 1
 // Ensure you use the proper decrement operator (not a-1)
 _.decrement = function(a){
   //Code Goes Below
-  
+  return --a;
 }
 
 //This function is complete and working. All you will need to do is 
@@ -88,25 +91,41 @@ _.mathOrder = function(test){
 //_.same takes two parameters and returns whether they are the equal or not
 _.same = function(a,b){
   //Code Goes Below
-  
+  if (a == b) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 //_.greater takes two numbers as parameters and checks if a is greater than b
 _.greater = function(a,b){
   //Code Goes Below
-  
+  if (a > b ) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 //_.lessThan takes two numbers as parameters and checks if a is less than b
 _.lessThan = function(a,b){
   //Code Goes Below
-  
+  if (a < b) { 
+    return true;
+  } else {
+    return false;
+  }
 }
 
 //_.falsyOrTruthy takes a parameter and determines whether it is TRUTHY or FALSY
 _.falsyOrTruthy = function(a){
    //Code Goes Below
-   
+   if ( a == true) {
+    return true;
+   } else {
+    return false;
+   }
 }
 
   //In the next tests you will be given four parameters to compare, sort of.
@@ -121,13 +140,21 @@ _.falsyOrTruthy = function(a){
   //_.andAnd will be using the && comparator
   _.andAnd = function(a,b,c,d) {
   //Code Goes Below
-  
+  if (a === b && c === d) {
+    return true;
+  } else {
+    return false;
+  }
   }
 
     //_.orOr will be using the || comparator
     _.orOr = function(a,b,c,d) {
       //Code Goes Below
-      
+      if (a === b || c === d) {
+        return true;
+      } else {
+        return false;
+      }
       }
 
   //Control Flow
@@ -214,7 +241,17 @@ _.falsyOrTruthy = function(a){
     _.forOf = (a) => {
       //Code Goes Below
       
-    }
+      //problem to solve:  
+      //(class comments) validate that a is an array.
+      //(class comments) return the sum of the numbers in the array.
+        var sum = 0;
+          for (let element of a) {
+            if (typeof (element) == 'number') {
+                sum += element;        
+            }        
+          }
+          return sum;
+        }
 
     //Loop through the given object and return an array of keys from the object. 
     //Note: to add values to an array use .push();
