@@ -161,33 +161,58 @@ _.falsyOrTruthy = function(a){
   //Create a basic if statement to pass the tests. 
   _.ifLogic = function(a, b){
     //Code Goes Below
-
+      if (a == b) {
+        return 'Great';
+      }
   }
 
     //Create a basic if else statement to pass the tests. 
     _.ifElseLogic = function(a, b){
       //Code Goes Below
-
+      if (a == b) {
+        return 'Great';
+      } else {
+        return 'Good';
+      }
     }
 
     //Using a for loop, iterate through the array passed. 
     //Return the array as a single string.
     _.forLoop = function(a){
       //Code Goes Below
-
+      let phrase = [];
+      for (let i = 0; i < a.length; ++i) {
+        phrase.push(a[i]);
+      }
     }
 
     //Using NESTED for loops, iterate through an array or arrays
     _.nestedForLoop = function(a){
       //Code Goes Below
-      
+      let sum = 0
+      for (let i = 0; i < a[i].length; i++){
+        for (let j = 0; j < a[j].length; j++) {
+            sum += a[i][j];
+            return sum;
+        }
+      }
     }
 
     //While looping through the array passed determine the data type of the element. If the element is a number add it to a variable. At the end return that variable. 
     //If an index in the array is not a number add 1 to the above mentioned variable
     _.forIfElseNum = function(a){
       //Code Goes Below
-
+        
+      let variable = 0
+      for (let i = 0; i < a.length; i++) {
+          if(typeof a[i] == 'number') {
+            variable += a[i];
+          } else {
+            variable += 1;
+          }
+          return variable;
+        }
+          
     }
 
     //This function is similar to the above function. Only this time you will be building a sentence rather than a total number. Loop through the array and concatenate the strings in it to make a sentence.
